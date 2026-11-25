@@ -1,0 +1,8 @@
+if [ "$HUSKY_SKIP_TRACK" = "1" ]; then
+	exit 0
+fi
+
+# This script now handles getting all commit and test data, 
+# sending it to the backend, and cleaning up temporary files.
+REPO_DIR="$(git rev-parse --show-toplevel)"
+node "$REPO_DIR/script/commit-tracker.js"
